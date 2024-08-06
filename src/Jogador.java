@@ -1,4 +1,3 @@
-
 public class Jogador {
 
     String nome;

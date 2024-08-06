@@ -1,5 +1,3 @@
-
-import com.joguinho.Jogo;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -53,10 +51,12 @@ public class App {
 
             System.out.println("Deseja jogar o jogo? (1 - sim/ 0 - não)");
             jogar = in.nextInt();
-            jogo.Jogar(jogar, jogadores, escolha);
+            jogo.Jogar(jogar, jogadorSelecionado );
         } else {
             jogar = 0;
-            jogo.Jogar(jogar, jogadores, escolha);
+            escolha = 0;
+            Jogador jogadorSelecionado = jogadores.get(escolha - 1);
+            jogo.Jogar(jogar,jogadorSelecionado);
         }
         in.close();
     }

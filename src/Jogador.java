@@ -1,8 +1,12 @@
+
+import java.util.Random;
+
 public class Jogador {
 
     String nome;
     double altura, tamPe;
     int vida = 100;
+    Random rand = new Random();
 
     public Jogador(String nome, double altura, double tamPe) {
         this.nome = nome;
@@ -39,6 +43,11 @@ public class Jogador {
         if (vida <= 0) {
             System.out.println("Perdeu o jogo! Você é ruim");
         }
+    }
+
+    public int Ataque() {
+        int ataque = rand.nextInt(30, 50);
+        return ataque;
     }
 
 }

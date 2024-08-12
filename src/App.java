@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class App {
 
     public static void main(String[] args) throws Exception {
-        System.out.println("Hello, World!");
+        System.out.println("Bem vindo ao Jogo!\n");
 
         ArrayList<Jogador> jogadores = new ArrayList<>();
         Jogo jogo = new Jogo();
@@ -25,17 +25,17 @@ public class App {
             while (sair == 1) {
                 String nome;
                 double altura, tamPe;
-                System.out.println("Digite o nome");
+                System.out.println("Digite o nome: ");
                 nome = in.next();
-                System.out.println("Digite o tamanho");
+                System.out.println("Digite o tamanho: ");
                 altura = in.nextDouble();
-                System.out.println("Digite o tamanho do Pé");
+                System.out.println("Digite o tamanho do pé: ");
                 tamPe = in.nextDouble();
                 Jogador jogador = new Jogador(nome, altura, tamPe);
 
                 jogadores.add(jogador);
 
-                System.out.println("Deseja cadastrar mais um jogador? (1 - sim/ 0 - não)");
+                System.out.println("Deseja cadastrar mais jogadores? (1 - sim/ 0 - não)");
                 sair = in.nextInt();
             }
 
@@ -44,13 +44,13 @@ public class App {
                 cont++;
             }
 
-            System.out.println("Escolha um jogador para jogar: (Escolha pelo numero!)");
+            System.out.println("Escolha um jogador para jogar: (Escolha pelo número!)");
             escolha = in.nextInt();
             Jogador jogadorSelecionado = jogadores.get(escolha - 1);
 
             System.out.println("Jogador escolhido: " + jogadorSelecionado.getNome() + " " + jogadorSelecionado.getAltura() + " " + jogadorSelecionado.getTamPe());
 
-            System.out.println("Deseja jogar o jogo? (1 - sim/ 0 - não)");
+            System.out.println("Deseja iniciar o jogo? (1 - sim/ 0 - não)");
             jogar = in.nextInt();
             jogo.Jogar(jogar, jogadorSelecionado);
         } else {
